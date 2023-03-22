@@ -15,7 +15,7 @@ CONNECTION_STRING = PGVector.connection_string_from_db_params(
     host=os.environ.get("TEST_PGVECTOR_HOST", "localhost"),
     port=int(os.environ.get("TEST_PGVECTOR_PORT", "5432")),
     database=os.environ.get("TEST_PGVECTOR_DATABASE", "postgres"),
-    user=os.environ.get("TEST_PGVECTOR_USER", "mauriciomaia"),
+    user=os.environ.get("TEST_PGVECTOR_USER", "postgres"),
     password=os.environ.get("TEST_PGVECTOR_PASSWORD", "postgres"),
 )
 
