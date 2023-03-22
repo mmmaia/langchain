@@ -5,7 +5,7 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import sqlalchemy
 from pgvector.sqlalchemy import Vector
-from sqlalchemy.dialects.postgresql import JSON, UUID
+from sqlalchemy.dialects.postgresql import UUID, JSON
 from sqlalchemy.orm import Mapped, Session, declarative_base, relationship
 
 from langchain.docstore.document import Document
@@ -145,7 +145,7 @@ class PGVector(VectorStore):
         self.create_collection()
 
     def connect(self) -> sqlalchemy.engine.Connection:
-        engine = sqlalchemy.create_engine(self.connection_string, echo=True)
+        engine = sqlalchemy.create_engine(self.connection_string)
         conn = engine.connect()
         return conn
 
